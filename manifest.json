@@ -1,0 +1,26 @@
+{
+    "name": "Adapt-Chart-To-Legend",
+    "version": "1.0.0",
+    "title": "Adapt Chart Height To Legend Height",
+    "jsfiddle": "http://jsfiddle.net/highcharts/haB8y/",
+    "author": {
+        "name": "Torstein Hønsi",
+        "url": "https://github.com/highslide-software"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/highslide-software/adapt-chart-to-legend/blob/master/LICENSE"
+        }
+    ],
+    "description": "This plugin adjust the height according to the legend height.",
+    "keywords": [
+     "adapt",
+     "height",
+     "legend",
+     "chart"
+    ],
+    "dependencies": {
+        "Highcharts": ">=3.0.0"
+    }
+}
