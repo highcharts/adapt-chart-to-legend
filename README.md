@@ -1,0 +1,2 @@
+adapt-chart-to-legend
+=====================
