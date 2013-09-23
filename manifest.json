@@ -1,8 +1,10 @@
 {
     "name": "Adapt-Chart-To-Legend",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "title": "Adapt Chart Height To Legend Height",
-    "jsfiddle": "http://jsfiddle.net/highcharts/haB8y/",
+    "demo": [
+        "http://jsfiddle.net/highcharts/haB8y/"
+    ],
     "author": {
         "name": "Torstein Hønsi",
         "url": "https://github.com/highslide-software"
