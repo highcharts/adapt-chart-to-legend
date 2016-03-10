@@ -1,6 +1,6 @@
 {
     "name": "Adapt-Chart-To-Legend",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "title": "Adapt Chart Height To Legend Height",
     "demo": [
         "http://jsfiddle.net/highcharts/haB8y/"
