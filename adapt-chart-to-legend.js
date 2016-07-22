@@ -28,7 +28,9 @@
             if (this.options.verticalAlign === 'bottom') {
                 translateY = this.group.attr('translateY') + this.legendHeight;
                 this.group.attr('translateY',  translateY);
-                this.group.alignAttr.translateY = translateY;
+                if (this.group.alignAttr) {
+                    this.group.alignAttr.translateY = translateY;
+                }
             }
 
             this.positionCheckboxes();
