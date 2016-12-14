@@ -1,9 +1,10 @@
 {
     "name": "Adapt-Chart-To-Legend",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "title": "Adapt Chart Height To Legend Height",
     "demo": [
-        "http://jsfiddle.net/highcharts/haB8y/"
+        "[Basic adapt to legend](http://jsfiddle.net/highcharts/haB8y/)",
+        "[Only export adapts to legend](http://jsfiddle.net/highcharts/rpq4qkd9/)"
     ],
     "author": {
         "name": "Torstein Hønsi",
