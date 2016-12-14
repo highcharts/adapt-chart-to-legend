@@ -8,12 +8,11 @@
 (function (H) {
     H.wrap(H.Legend.prototype, 'render', function (proceed) {
         var chart = this.chart, 
-            translateY,
-            adjust = this.options.adjustChartSize && !chart.renderer.forExport;
+            translateY;
 
         proceed.call(this);
 
-        if (adjust) { // #7
+        if (this.options.adjustChartSize) { // #7
 
             if (!chart.originalChartHeight) {
                 chart.originalChartHeight = chart.chartHeight;
@@ -22,7 +21,10 @@
             // Adapt chart metrics
             chart.chartHeight = chart.originalChartHeight + this.legendHeight;
             chart.marginBottom += this.legendHeight;
-            chart.container.style.height = chart.container.firstChild.style.height = chart.chartHeight + 'px';
+
+            // Set the DOM element heights
+            chart.container.style.height = chart.chartHeight + 'px';
+            chart.renderer.boxWrapper.attr('height', chart.chartHeight); // #7
 
             // Move the legend down
             if (this.options.verticalAlign === 'bottom') {
