@@ -8,32 +8,46 @@
 (function (H) {
     H.wrap(H.Legend.prototype, 'render', function (proceed) {
         var chart = this.chart, 
-            translateY;
+            translateY,
+            addedHeight;
 
         proceed.call(this);
 
         if (this.options.adjustChartSize) { // #7
 
+            addedHeight = this.legendHeight;
+
             if (!chart.originalChartHeight) {
                 chart.originalChartHeight = chart.chartHeight;
             }
 
-            // Adapt chart metrics
-            chart.chartHeight = chart.originalChartHeight + this.legendHeight;
-            chart.marginBottom += this.legendHeight;
+            
+            if (this.options.align === 'left' || this.options.align === 'right') {
+                addedHeight = Math.max(
+                    this.group.translateY + this.legendHeight - chart.originalChartHeight,
+                    0
+                );
 
-            // Set the DOM element heights
-            chart.container.style.height = chart.chartHeight + 'px';
-            chart.renderer.boxWrapper.attr('height', chart.chartHeight); // #7
 
             // Move the legend down
-            if (this.options.verticalAlign === 'bottom') {
+            } else if (this.options.verticalAlign === 'bottom') {
                 translateY = this.group.attr('translateY') + this.legendHeight;
                 this.group.attr('translateY',  translateY);
                 if (this.group.alignAttr) {
                     this.group.alignAttr.translateY = translateY;
                 }
             }
+
+            if (addedHeight) {
+                // Adapt chart metrics
+                chart.chartHeight = chart.originalChartHeight + addedHeight;
+                chart.marginBottom += addedHeight;
+
+                // Set the DOM element heights
+                chart.container.style.height = chart.chartHeight + 'px';
+                chart.renderer.boxWrapper.attr('height', chart.chartHeight); // #7
+            }
+
 
             this.positionCheckboxes();
         }
