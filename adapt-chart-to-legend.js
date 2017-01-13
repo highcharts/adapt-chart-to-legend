@@ -23,16 +23,12 @@
       if (this.options.adjustChartSize) { // #7
 
         addedHeight = this.legendHeight;
-
         if (!chart.originalChartHeight) {
           chart.originalChartHeight = chart.chartHeight;
         }
 
         if (this.options.align === 'left' || this.options.align === 'right') {
-          addedHeight = Math.max(
-            this.group.translateY + this.legendHeight - chart.originalChartHeight,
-            0
-          );
+          addedHeight = Math.max(this.group.translateY + this.legendHeight - chart.originalChartHeight, 0);
 
           // Move the legend down
         } else if (this.options.verticalAlign === 'bottom') {
@@ -42,7 +38,6 @@
             this.group.alignAttr.translateY = translateY;
           }
         }
-
         if (addedHeight) {
           //   // Adapt chart metrics
           chart.chartHeight = chart.originalChartHeight + addedHeight;
@@ -55,14 +50,9 @@
           var boxedElement = chart.renderer.box.clientWidth ? chart.renderer.box /*IE*/ : chart.renderer.box.parentElement /*FF*/ ;
           var viewBox = "0 0 " + boxedElement.clientWidth + " " + boxedElement.clientHeight;
           chart.renderer.boxWrapper.attr('viewBox', viewBox);
-
         }
-
-
         this.positionCheckboxes();
       }
-
     });
-
   }(Highcharts));
 }));
