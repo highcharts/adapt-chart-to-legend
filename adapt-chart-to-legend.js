@@ -31,9 +31,12 @@
           addedHeight = Math.max(this.group.translateY + this.legendHeight - chart.originalChartHeight, 0);
 
           // Move the legend down
-        } else if (this.options.verticalAlign === 'bottom') {
+        } else if (!chart.container.attributes['height-adapted-to-legend'] && this.options.verticalAlign === 'bottom') { // #2
           translateY = this.group.attr('translateY') + this.legendHeight;
           this.group.attr('translateY', translateY);
+
+          chart.container.setAttribute('height-adapted-to-legend', true); // #2
+
           if (this.group.alignAttr) {
             this.group.alignAttr.translateY = translateY;
           }
