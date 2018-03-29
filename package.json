@@ -1,6 +1,6 @@
 {
   "name": "highcharts-adapt-chart-to-legend",
-  "version": "1.0.2",
+  "version": "1.0.7",
   "description": "Highcharts plugin to adjust the height according to the legend height. This avoids situations where too many legend items would introduce navigation handles or take over too much space from the chart.",
   "main": "adapt-chart-to-legend.js",
   "scripts": {
@@ -12,7 +12,8 @@
   },
   "keywords": [
     "highcharts",
-    "plugin"
+    "plugin",
+    "highcharts-addon"
   ],
   "author": "Torstein Hønsi",
   "license": "MIT",

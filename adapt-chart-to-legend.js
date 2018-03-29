@@ -2,7 +2,7 @@
  * Highcharts plugin for adjustable chart height in response to legend height
  *
  * Author:        Torstein Honsi
- * Version:       1.0.6
+ * Version:       1.0.7
  * Last revision: 2016-12-15
  */
 (function (factory) {
